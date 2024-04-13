@@ -8,8 +8,8 @@ api_key = os.getenv("OPENAI_API_KEY")  # Used in production
 client = OpenAI(api_key=api_key)
 
 # Cell 2: Title & Description
-st.title('🤖 AI Content Assistant')
-st.markdown('I was made to help you craft interesting Social media posts.')
+st.title('🧈 AI Recipe Assistant')
+st.markdown('I was made to help you create delicious recipes.')
 
 # Cell 3: Function to generate text using OpenAI
 def analyze_text(text):
@@ -22,8 +22,8 @@ def analyze_text(text):
 
     # Instructions for the AI (adjust if needed)
     messages = [
-        {"role": "system", "content": "You are an assistant who helps craft social media posts."},
-        {"role": "user", "content": f"Please help me write a social media post based on the following:\n{text}"}
+        {"role": "system", "content": "You are a cook who helps craft interesting recipes."},
+        {"role": "user", "content": f"Please help me create a recipe using the following ingredients. You can assume that I have pantry staples on hand. Please provide the list of ingredients, the amount of each that I need, and step by step instructions for how to make the recipe. Include pictures for each step, including a final picture of what my end result should look like. \n{text}"}
     ]
 
     response = client.chat.completions.create(
