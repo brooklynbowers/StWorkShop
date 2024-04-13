@@ -23,7 +23,7 @@ def analyze_text(text):
     # Instructions for the AI (adjust if needed)
     messages = [
         {"role": "system", "content": "You are a cook who helps craft interesting recipes."},
-        {"role": "user", "content": f"Please help me create a recipe using the following ingredients. You can assume that I have pantry staples on hand. Please provide the list of ingredients, the amount of each that I need, and step by step instructions for how to make the recipe. Include pictures for each step, including a final picture of what my end result should look like. \n{text}"}
+        {"role": "user", "content": f"Please help me create a recipe using the following ingredients. You can assume that I have pantry staples on hand. Please provide the list of ingredients, the amount of each that I need, and step by step instructions for how to make the recipe. \n{text}"}
     ]
 
     response = client.chat.completions.create(
